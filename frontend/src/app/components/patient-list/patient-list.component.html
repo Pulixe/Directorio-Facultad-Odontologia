@@ -1,0 +1,33 @@
+ <div class="container">
+
+     <div class="text-center">
+         <h2>Listado de pacientes</h2>
+         <hr>
+     </div>
+    
+</div> 
+
+ <div class="row">
+    <div class="col-md-4" *ngFor="let patient of patients">
+            <div class="card  text-white bg-primary mb-3" style="max-width: 20rem;">
+                <div class="card-header text-center bg-dark text-white ">
+                    <strong> {{patient.name}} </strong>
+                </div>
+                <div class="card-body">
+                    <p>email: {{patient.email}}</p>
+                    <p>Telefono: {{patient.phone}}</p>
+                    <p>Necesito: <br> {{patient.dentalt}}</p>
+                    <a href="mailto:{{patient.email}}" class="btn btn-info btn-block">
+                        CONTACTAR
+                    </a>
+                    <!--si quisiera editar un paciente seria asi 
+                    <a [routerLink]="['/patients/edit', patient.id]" class="btn btn-info btn-block">
+                    EDITAR
+                    </a>-->
+                </div>
+            </div>
+    </div>
+ </div>  
+ 
+
+

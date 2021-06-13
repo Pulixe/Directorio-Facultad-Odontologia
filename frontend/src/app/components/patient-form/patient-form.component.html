@@ -1,0 +1,38 @@
+<div class="col-md-4 offset-md-2">
+    <div class="card">
+        <div class="card-body">
+            <form action="">
+                <div class="form-group">
+                    <input type="text" name="name" [(ngModel)]="patient.name" placeholder="mauricio" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="email" [(ngModel)]="patient.email" placeholder="mario@gmail.com" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="phone" [(ngModel)]="patient.phone" placeholder="6792-5714" class="form-control">
+                </div>
+
+                <!--CAMBIAR ESTE CONTROLPOR CHECKBOXS-->
+                <div class="form-group">
+                    <textarea name="atencion"  [(ngModel)]="patient.dentalt" placeholder="Escriba sus necesidades dentales" cols="30" rows="10" class="form-control"></textarea>
+                </div>
+                <!--CAMBIAR ESTE CONTROLPOR CHECKBOXS-->
+                
+                    <button type="button" class="btn btn-success btn-block" (click)=" edit ? updatePatient() : savePatient()">
+                        Guardar
+                    </button>
+                    <button type="button"  class="btn btn-danger btn-block" routerLink="/" routerLinkActive="active">atras</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4">
+    <div class="card card-body text-center">
+        <h3>{{patient.name == '' ? 'Nombre' : patient.name}} </h3>
+        <p>{{patient.email == '' ? 'Email' : patient.email}}</p>
+        <p>{{patient.phone == '' ? 'Teléfono' : patient.phone}}</p>
+        <p>fecha: <br>{{patient.created_At | date: 'yyyy-MM-dd'}}</p>
+    </div>
+    
+</div>
